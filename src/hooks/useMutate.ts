@@ -1,6 +1,6 @@
 'use client'
 
-import { api } from '@/app/[locale]/services/axios-api'
+import { api } from '@/services/axios-api'
 import { useCallback } from 'react'
 import { toast } from 'sonner'
 

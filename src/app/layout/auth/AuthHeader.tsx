@@ -1,5 +1,5 @@
-import { ThemeSwitcher } from '@/app/[locale]/components/Basic/ThemeSwitcher'
-import { Logo } from '@/app/[locale]/components/Logo'
+import { ThemeSwitcher } from '@/components/Basic/ThemeSwitcher'
+import { Logo } from '@/components/Logo'
 import { Button } from '@nextui-org/react'
 import { GiLaserGun } from 'react-icons/gi'
 

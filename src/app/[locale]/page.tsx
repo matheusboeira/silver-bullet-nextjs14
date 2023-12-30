@@ -1,7 +1,14 @@
-export default async function Home() {
+'use client'
+
+import { Button } from '@nextui-org/react'
+import { useState } from 'react'
+
+export default function Page() {
+  const [count, setCount] = useState(0)
+
   return (
-    <main>
-      <h1>Home</h1>
-    </main>
+    <Button onClick={() => setCount((previous) => previous + 1)}>
+      Contagem: {count}
+    </Button>
   )
 }

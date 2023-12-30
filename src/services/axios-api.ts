@@ -1,5 +1,3 @@
-'use client'
-
 import { configs } from '@/config'
 import axios, { AxiosError } from 'axios'
 import { StatusCodes } from 'http-status-codes'

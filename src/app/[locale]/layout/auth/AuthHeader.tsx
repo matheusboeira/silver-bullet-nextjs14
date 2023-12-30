@@ -1,7 +1,7 @@
 'use client'
 
-import { ThemeSwitcher } from '@/app/components/Basic/ThemeSwitcher'
-import { Logo } from '@/app/components/Logo'
+import { ThemeSwitcher } from '@/app/[locale]/components/Basic/ThemeSwitcher'
+import { Logo } from '@/app/[locale]/components/Logo'
 import { GlassWater } from 'lucide-react'
 
 export default function AuthHeader() {

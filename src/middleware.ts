@@ -1,8 +1,12 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import createMiddleware from 'next-intl/middleware'
+import { localePrefix, locales } from './navigation'
 
-export function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.match('/')) {
-    // return NextResponse.redirect(new URL('/auth', request.url))
-  }
+export default createMiddleware({
+  locales,
+  localePrefix,
+  defaultLocale: 'en'
+})
+
+export const config = {
+  matcher: ['/((?!api|_next|.*\\..*).*)']
 }

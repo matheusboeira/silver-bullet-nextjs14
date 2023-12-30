@@ -1,6 +1,5 @@
-import AuthFooter from '@/app/[locale]/layout/auth/AuthFooter'
-import AuthHeader from '@/app/[locale]/layout/auth/AuthHeader'
-import { Link } from '@nextui-org/react'
+import { AuthFooter } from '@/app/[locale]/layout/auth/AuthFooter'
+import { AuthHeader } from '@/app/[locale]/layout/auth/AuthHeader'
 
 type LayoutProps = {
   children: React.ReactNode

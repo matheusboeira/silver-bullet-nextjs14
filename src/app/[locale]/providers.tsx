@@ -10,7 +10,7 @@ type ProvidersProps = {
   children: React.ReactNode
 }
 
-export const Providers = ({ children }: ProvidersProps) => {
+export default function Providers({ children }: ProvidersProps) {
   const navigate = useRouter()
 
   return (

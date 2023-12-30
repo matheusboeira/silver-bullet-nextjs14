@@ -1,6 +1,6 @@
 'use client'
 
-import { configs } from '@/app/[locale]/config'
+import { configs } from '@/config'
 import axios, { AxiosError } from 'axios'
 import { StatusCodes } from 'http-status-codes'
 

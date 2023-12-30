@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@nextui-org/react'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'

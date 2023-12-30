@@ -1,6 +1,6 @@
 import { Link } from '@nextui-org/react'
 
-export default function AuthFooter() {
+export const AuthFooter = () => {
   return (
     <footer className="flex flex-col items-center md:flex-row md:items-start md:justify-between mx-10">
       <small className="text-center text-xs">Privacy Policy</small>

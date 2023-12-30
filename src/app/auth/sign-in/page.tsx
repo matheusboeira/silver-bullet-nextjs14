@@ -1,7 +1,9 @@
+import { SignInForm } from './page.form'
+
 export default function SignIn() {
   return (
     <>
-      <span>hello!asdasd</span>
+      <SignInForm />
     </>
   )
 }

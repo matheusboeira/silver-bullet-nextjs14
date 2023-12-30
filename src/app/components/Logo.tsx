@@ -1,4 +1,4 @@
-import { cn } from '@/utils/cn'
+import { cn } from '@/app/utils/cn'
 import { LucideProps } from 'lucide-react'
 import { ComponentProps } from 'react'
 import { GiSupersonicBullet } from 'react-icons/gi'

@@ -1,5 +1,4 @@
-import { LayoutProps } from '@/@types'
-import { cn } from '@/utils/cn'
+import { LayoutProps } from '@/app/@types'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -12,13 +11,10 @@ export const metadata: Metadata = {
   description: 'Manage your projects with ease.'
 }
 
-export default function RootLayout({
-  children,
-  params: { locale }
-}: LayoutProps) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={cn('container', inter.className)}>
+    <html lang={'en-US'} suppressHydrationWarning>
+      <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -15,16 +15,16 @@ const config: Config = {
       padding: {
         DEFAULT: '0.5rem'
       }
+    },
+    screens: {
+      xss: '420px',
+      xs: '520px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1436px'
     }
-    // screens: {
-    //   xss: '420px',
-    //   xs: '520px',
-    //   sm: '640px',
-    //   md: '768px',
-    //   lg: '1024px',
-    //   xl: '1280px',
-    //   '2xl': '1436px'
-    // }
   },
   darkMode: 'class',
   plugins: [

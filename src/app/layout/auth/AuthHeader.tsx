@@ -1,12 +1,12 @@
 'use client'
 
-import { ThemeSwitcher } from '@/components/Basic/ThemeSwitcher'
-import { Logo } from '@/components/Logo'
+import { ThemeSwitcher } from '@/app/components/Basic/ThemeSwitcher'
+import { Logo } from '@/app/components/Logo'
 import { GlassWater } from 'lucide-react'
 
-export const AuthHeader = () => {
+export default function AuthHeader() {
   return (
-    <header className="flex items-end justify-between mx-6 sm:mx-10 h-16">
+    <header className="flex items-end justify-between mx-6 sm:mx-10 h-full">
       <div className="h-full flex items-end">
         <Logo />
       </div>

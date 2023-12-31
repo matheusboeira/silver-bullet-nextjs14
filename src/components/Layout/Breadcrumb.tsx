@@ -1,6 +1,5 @@
 'use client'
 
-import { cn } from '@/utils/cn'
 import {
   BreadcrumbItem,
   Breadcrumbs,
@@ -10,23 +9,17 @@ import {
   DropdownMenu,
   DropdownTrigger
 } from '@nextui-org/react'
-import { ComponentProps } from 'react'
 
 export type BreadcrumbItemProps = {
   label: string
   link?: string
 }
 
-export type BreadcrumbProps = ComponentProps<'section'> & {
+export type BreadcrumbProps = {
   items: Array<BreadcrumbItemProps>
-  className?: string
 }
 
-export const Breadcrumb = ({
-  items = [],
-  className,
-  ...props
-}: BreadcrumbProps) => {
+export const Breadcrumb = ({ items = [] }: BreadcrumbProps) => {
   return (
     <Breadcrumbs
       size="sm"

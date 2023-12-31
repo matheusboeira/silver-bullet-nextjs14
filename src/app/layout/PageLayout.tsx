@@ -8,8 +8,8 @@ type PageLayoutProps = {
 
 export const PageLayout = ({
   title,
-  breadcrumbs,
-  children
+  children,
+  breadcrumbs
 }: PageLayoutProps) => {
   return (
     <>

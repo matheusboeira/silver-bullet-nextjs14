@@ -15,7 +15,7 @@ export const Logo = ({ className, ...props }: LogoProps) => {
       </div>
       <span
         className={cn(
-          'text-2xl font-bold dark:text-neutral-50 text-neutral-800 sm:text-red-900',
+          'text-2xl font-bold dark:text-neutral-50 text-neutral-800',
           className
         )}
         {...props}

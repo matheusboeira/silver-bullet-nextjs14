@@ -6,7 +6,7 @@
 		"dev": "i18nexus pull && next dev",
 		"build": "i18nexus pull && next build",
 		"start": "i18nexus pull && next start",
-		"lint": "next lint",
+		"lint": "biome lint ./src",
 		"format": "biome format ./src --write"
 	},
 	"dependencies": {

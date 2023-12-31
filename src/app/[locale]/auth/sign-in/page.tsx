@@ -1,11 +1,16 @@
 import { useTranslations } from 'next-intl'
+import { SignInForm } from './form'
+import { PageLayout } from '@/app/layout/PageLayout'
 
 export default function Home() {
   const t = useTranslations('Index')
 
   return (
-    <main>
-      <h1>{t('title')}</h1>
-    </main>
+    <PageLayout
+      title={t('title')}
+      breadcrumb={[{ label: 'Teste' }, { label: 'teste2' }]}
+    >
+      <SignInForm />
+    </PageLayout>
   )
 }

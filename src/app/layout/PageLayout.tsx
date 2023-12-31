@@ -1,20 +1,23 @@
+import { Breadcrumb, BreadcrumbItemProps } from '@/components/Layout/Breadcrumb'
+
 type PageLayoutProps = {
-  title?: string
-  breadcrumb?: string
+  title: React.ReactNode
   children: React.ReactNode
+  breadcrumbs?: BreadcrumbItemProps[]
 }
 
-export const PageLayout = ({ title, children }: PageLayoutProps) => {
+export const PageLayout = ({
+  title,
+  breadcrumbs,
+  children
+}: PageLayoutProps) => {
   return (
-    <main>
-      <h1>{title}</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta
-        assumenda, quia ut fugiat ipsa cupiditate laudantium modi minus libero
-        totam voluptatibus vero necessitatibus suscipit debitis, aperiam cumque
-        asperiores omnis doloremque?
-      </p>
-      <section>{children}</section>
-    </main>
+    <>
+      <section className="flex flex-col flex-wrap items-center">
+        {breadcrumbs && <Breadcrumb items={breadcrumbs} />}
+        <h1 className="mt-0.5 text-2xl font-bold tracking-wide">{title}</h1>
+      </section>
+      <main>{children}</main>
+    </>
   )
 }

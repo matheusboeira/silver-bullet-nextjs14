@@ -12,7 +12,7 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={'container text-foreground bg-background h-screen w-full'}
+        className={'text-foreground bg-background container h-screen w-full'}
       >
         <Providers>{children}</Providers>
       </body>

@@ -1,20 +1,18 @@
 import type { Metadata } from 'next'
 import Providers from './[locale]/providers'
 import './globals.css'
+import { type LayoutProps } from '@/@types'
 
 export const metadata: Metadata = {
   title: 'Silver Bullet',
   description: 'Manage your projects with ease.'
 }
 
-export type LayoutProps = {
+type RootLayoutProps = LayoutProps & {
   children: React.ReactNode
-  params: {
-    locale: string
-  }
 }
 
-export default function RootLayout({ children }: LayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="text-foreground bg-background container h-screen w-full">

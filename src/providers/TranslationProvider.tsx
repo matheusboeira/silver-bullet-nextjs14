@@ -2,14 +2,14 @@
 
 import { Locale } from '@/i18n'
 import initTranslations from '@/i18n/init'
-import { createInstance } from 'i18next'
+import { Resource, createInstance } from 'i18next'
 import { I18nextProvider } from 'react-i18next'
 
 type TranslationsProviderProps = {
   children: React.ReactNode
   locale: Locale
   namespaces: string[]
-  resources: any
+  resources: Resource
 }
 
 export default function TranslationsProvider({

@@ -1,4 +1,4 @@
-import { LayoutProps } from '@/@types'
+import type { LayoutProps } from '@/@types'
 import initTranslations from '@/i18n/init'
 import TranslationsProvider from '@/providers/TranslationProvider'
 import { SignInForm } from './auth/sign-in/form'

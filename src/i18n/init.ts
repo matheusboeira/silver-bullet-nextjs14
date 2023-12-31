@@ -1,13 +1,13 @@
 import { Locale, i18nConfig } from '@/i18n'
-import { createInstance } from 'i18next'
+import { Resource, createInstance, i18n } from 'i18next'
 import resourcesToBackend from 'i18next-resources-to-backend'
 import { initReactI18next } from 'react-i18next/initReactI18next'
 
 export default async function initTranslations(
   locale: Locale,
   namespaces: string[],
-  i18nInstance?: any,
-  resources?: any
+  i18nInstance?: i18n,
+  resources?: Resource
 ) {
   const instance = i18nInstance || createInstance()
   instance.use(initReactI18next)

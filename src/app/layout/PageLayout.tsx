@@ -13,7 +13,7 @@ export const PageLayout = ({
 }: PageLayoutProps) => {
   return (
     <>
-      <section className="flex flex-col flex-wrap items-center">
+      <section className="flex flex-col flex-wrap">
         {breadcrumbs && <Breadcrumb items={breadcrumbs} />}
         <h1 className="mt-0.5 text-2xl font-bold tracking-wide">{title}</h1>
       </section>

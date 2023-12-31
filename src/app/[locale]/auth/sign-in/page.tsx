@@ -8,7 +8,11 @@ export default function Home() {
   return (
     <PageLayout
       title={t('title')}
-      breadcrumb={[{ label: 'Teste' }, { label: 'teste2' }]}
+      breadcrumbs={[
+        { label: 'Teste' },
+        { label: 'teste2' },
+        { label: 'Teste 3' }
+      ]}
     >
       <SignInForm />
     </PageLayout>

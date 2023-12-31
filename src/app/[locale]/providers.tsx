@@ -1,7 +1,7 @@
 'use client'
 
-import { NextUIProvider } from '@nextui-org/react'
 import { ThemeProvider } from 'next-themes'
+import { NextUIProvider } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
 
 type ProvidersProps = {
@@ -13,7 +13,12 @@ export default function Providers({ children }: ProvidersProps) {
 
   return (
     <NextUIProvider navigate={navigate.push}>
-      <ThemeProvider attribute="class" enableSystem>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
         {children}
       </ThemeProvider>
     </NextUIProvider>

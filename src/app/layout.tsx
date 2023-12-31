@@ -1,7 +1,7 @@
+import { type LayoutProps } from '@/@types'
 import type { Metadata } from 'next'
 import Providers from './[locale]/providers'
 import './globals.css'
-import { type LayoutProps } from '@/@types'
 
 export const metadata: Metadata = {
   title: 'Silver Bullet',

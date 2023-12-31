@@ -3,7 +3,13 @@ import { Resource, createInstance, i18n } from 'i18next'
 import resourcesToBackend from 'i18next-resources-to-backend'
 import { initReactI18next } from 'react-i18next/initReactI18next'
 
-export default async function initTranslations(
+export type Translations = {
+  i18n: i18n
+  resources: Resource
+  t: i18n['t']
+}
+
+export async function initTranslations(
   locale: Locale,
   namespaces: string[],
   i18nInstance?: i18n,

@@ -1,19 +1,16 @@
-import { useTranslations } from 'next-intl'
-import { SignInForm } from './form'
+import { LayoutProps } from '@/@types'
 import { PageLayout } from '@/app/layout/PageLayout'
+import { useTranslations } from '@/hooks/server/useTranslations'
+import { SignInForm } from './form'
 
-export default function Home() {
-  const t = useTranslations('Index')
+export default async function SignIn({ params }: LayoutProps) {
+  const { title, breadcrumbs, i18n } = await useTranslations({
+    params,
+    ns: ['weekly-report']
+  })
 
   return (
-    <PageLayout
-      title={t('title')}
-      breadcrumbs={[
-        { label: 'Teste' },
-        { label: 'teste2' },
-        { label: 'Teste 3' }
-      ]}
-    >
+    <PageLayout title={title()} breadcrumbs={breadcrumbs()} i18n={i18n}>
       <SignInForm />
     </PageLayout>
   )

@@ -1,7 +1,7 @@
 'use client'
 
 import { Locale } from '@/i18n'
-import initTranslations from '@/i18n/init'
+import { initTranslations } from '@/i18n/init'
 import { Resource, createInstance } from 'i18next'
 import { I18nextProvider } from 'react-i18next'
 

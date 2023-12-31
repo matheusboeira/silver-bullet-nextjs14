@@ -2,6 +2,7 @@ import { Locale } from '@/i18n'
 
 export type LayoutProps = {
   params: {
+    id?: string
     locale: Locale
   }
 }

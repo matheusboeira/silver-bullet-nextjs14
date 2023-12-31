@@ -5,25 +5,31 @@ import { initReactI18next } from 'react-i18next/initReactI18next'
 
 export default async function initTranslations(
   locale: Locale,
-  namespaces: string[]
+  namespaces: string[],
+  i18nInstance?: any,
+  resources?: any
 ) {
-  const instance = createInstance()
+  const instance = i18nInstance || createInstance()
   instance.use(initReactI18next)
 
-  instance.use(
-    resourcesToBackend(
-      (language: string, namespace: string) =>
-        import(`../../locales/${language}/${namespace}.json`)
+  if (!resources) {
+    instance.use(
+      resourcesToBackend(
+        (language: string, namespace: string) =>
+          import(`../../locales/${language}/${namespace}.json`)
+      )
     )
-  )
+  }
 
   await instance.init({
     lng: locale,
+    resources,
     fallbackLng: i18nConfig.defaultLocale,
     supportedLngs: i18nConfig.locales,
     defaultNS: namespaces[0],
     fallbackNS: namespaces[0],
-    ns: namespaces
+    ns: namespaces,
+    preload: resources ? [] : i18nConfig.locales
   })
 
   return {

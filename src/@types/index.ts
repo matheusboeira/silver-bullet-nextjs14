@@ -1,7 +1,9 @@
+import { Locale } from '@/i18n'
+
 export type LayoutProps = {
   children: React.ReactNode
   params: {
-    locale: string
+    locale: Locale
   }
 }
 

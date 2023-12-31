@@ -1,14 +1,12 @@
-'use client'
+import { LayoutProps } from '@/@types'
+import initTranslations from '@/i18n/init'
 
-import { Button } from '@nextui-org/react'
-import { useState } from 'react'
-
-export default function Page() {
-  const [count, setCount] = useState(0)
+export default async function Home({ params }: LayoutProps) {
+  const { t } = await initTranslations(params.locale, ['weekly-evaluation'])
 
   return (
-    <Button onClick={() => setCount((previous) => previous + 1)}>
-      Contagem: {count}
-    </Button>
+    <main>
+      <h1>{t('page.new')}</h1>
+    </main>
   )
 }

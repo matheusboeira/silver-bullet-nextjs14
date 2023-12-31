@@ -1,4 +1,3 @@
-import { NextIntlClientProvider } from 'next-intl'
 import Providers from './providers'
 
 export type LayoutProps = {
@@ -9,9 +8,6 @@ export type LayoutProps = {
 }
 
 export default function LocaleLayout({ children, params }: LayoutProps) {
-  return (
-    <NextIntlClientProvider locale={params.locale}>
-      <Providers>{children}</Providers>
-    </NextIntlClientProvider>
-  )
+  console.log(params.locale)
+  return <Providers>{children}</Providers>
 }

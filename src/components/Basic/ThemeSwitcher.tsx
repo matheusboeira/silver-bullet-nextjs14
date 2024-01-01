@@ -18,9 +18,9 @@ export const ThemeSwitcher = () => {
     return <CustomSkeleton />
   }
 
-  const handleTheme = useCallback(() => {
+  const handleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
-  }, [theme, setTheme])
+  }
 
   return (
     <Button onPress={handleTheme} variant="flat" className="z-10" isIconOnly>

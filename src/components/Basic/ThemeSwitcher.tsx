@@ -1,9 +1,10 @@
 'use client'
 
-import { Button, Skeleton } from '@nextui-org/react'
+import { Button } from '@nextui-org/react'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { CustomSkeleton } from './CustomSkeleton'
 
 export const ThemeSwitcher = () => {
   const [isMounted, setMounted] = useState(false)
@@ -14,7 +15,7 @@ export const ThemeSwitcher = () => {
   }, [])
 
   if (!isMounted) {
-    return <Skeleton className="h-[2.5rem] w-[2.5rem] rounded-lg" />
+    return <CustomSkeleton />
   }
 
   const handleTheme = () => {

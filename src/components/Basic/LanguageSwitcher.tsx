@@ -12,7 +12,8 @@ import {
 } from '@nextui-org/react'
 import { Languages, Loader2 } from 'lucide-react'
 import { useParams, usePathname, useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { CustomSkeleton } from './CustomSkeleton'
 
 type LanguageProps = {
   code: Locale
@@ -37,6 +38,7 @@ export const LanguageSwitcher = () => {
   const { locale } = useParams()
   const router = useRouter()
   const currentPathname = usePathname()
+  const [isMounted, setIsMounted] = useState(false)
 
   const changeLanguage = (language: Locale) => {
     const isDefaultLocale = !locale || locale === i18nConfig.defaultLocale
@@ -49,14 +51,17 @@ export const LanguageSwitcher = () => {
   }
 
   useEffect(() => {
-    const lang = window.localStorage.getItem('lang') as Locale
     const current = locale ? (locale as Locale) : i18nConfig.defaultLocale
-
-    if (lang !== locale) {
-      window.localStorage.setItem('lang', current)
-      return
-    }
+    window.localStorage.setItem('lang', current)
   }, [locale])
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return <CustomSkeleton />
+  }
 
   return (
     <Dropdown placement="bottom-end" aria-label="select language">

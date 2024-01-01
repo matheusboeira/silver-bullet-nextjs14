@@ -3,7 +3,7 @@
 import { Button } from '@nextui-org/react'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { CustomSkeleton } from './CustomSkeleton'
 
 export const ThemeSwitcher = () => {
@@ -18,9 +18,9 @@ export const ThemeSwitcher = () => {
     return <CustomSkeleton />
   }
 
-  const handleTheme = () => {
+  const handleTheme = useCallback(() => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
+  }, [theme, setTheme])
 
   return (
     <Button onPress={handleTheme} variant="flat" className="z-10" isIconOnly>

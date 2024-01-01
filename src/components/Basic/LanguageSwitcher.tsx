@@ -12,7 +12,7 @@ import {
 } from '@nextui-org/react'
 import { Languages, Loader2 } from 'lucide-react'
 import { useParams, usePathname, useRouter } from 'next/navigation'
-import { ChangeEvent } from 'react'
+import { useEffect } from 'react'
 
 type LanguageProps = {
   code: Locale
@@ -39,14 +39,24 @@ export const LanguageSwitcher = () => {
   const currentPathname = usePathname()
 
   const changeLanguage = (language: Locale) => {
-    console.log(language)
+    const isDefaultLocale = !locale || locale === i18nConfig.defaultLocale
+    const pathname = isDefaultLocale
+      ? `/${language}${currentPathname}`
+      : currentPathname.replace(`/${locale}`, `/${language}`)
 
-    if (locale === i18nConfig.defaultLocale || !locale) {
-      router.push(`/${language}${currentPathname}`)
-    } else {
-      router.push(currentPathname.replace(`/${locale}`, `/${language}`))
-    }
+    router.push(pathname)
+    window.localStorage.setItem('lang', language)
   }
+
+  useEffect(() => {
+    const lang = window.localStorage.getItem('lang') as Locale
+    const current = locale ? (locale as Locale) : i18nConfig.defaultLocale
+
+    if (lang !== locale) {
+      window.localStorage.setItem('lang', current)
+      return
+    }
+  }, [locale])
 
   return (
     <Dropdown placement="bottom-end" aria-label="select language">

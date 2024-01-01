@@ -11,7 +11,7 @@ export type Translations = {
 
 export async function initTranslations(
   locale: Locale,
-  namespaces: string[],
+  namespaces: string[] = ['common'],
   i18nInstance?: i18n,
   resources?: Resource
 ) {

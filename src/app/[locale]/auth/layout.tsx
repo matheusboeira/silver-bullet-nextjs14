@@ -5,7 +5,7 @@ type AuthLayoutProps = {
   children: React.ReactNode
 }
 
-export default function AuthLayout({ children }: AuthLayoutProps) {
+export default async function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <div className="container grid h-screen grid-rows-[64px_1fr_64px]">
       <AuthHeader />

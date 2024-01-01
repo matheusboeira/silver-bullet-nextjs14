@@ -8,15 +8,15 @@ import { I18nextProvider } from 'react-i18next'
 type TranslationsProviderProps = {
   children: React.ReactNode
   locale: Locale
-  namespaces: string[]
+  namespaces?: string[]
   resources: Resource
 }
 
 export default function TranslationsProvider({
   children,
   locale,
-  namespaces,
-  resources
+  resources,
+  namespaces = ['common']
 }: TranslationsProviderProps) {
   const i18n = createInstance()
   initTranslations(locale, namespaces, i18n, resources)

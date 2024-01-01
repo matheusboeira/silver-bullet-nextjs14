@@ -2,8 +2,8 @@
 
 import { Button, Skeleton } from '@nextui-org/react'
 import { Moon, Sun } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export const ThemeSwitcher = () => {
   const [isMounted, setMounted] = useState(false)
@@ -18,7 +18,6 @@ export const ThemeSwitcher = () => {
   }
 
   const handleTheme = () => {
-    window.localStorage.setItem('test', theme === 'dark' ? 'light' : 'dark')
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 

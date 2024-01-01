@@ -1,7 +1,6 @@
+import { LanguageSwitcher } from '@/components/Basic/LanguageSwitcher'
 import { ThemeSwitcher } from '@/components/Basic/ThemeSwitcher'
 import { Logo } from '@/components/Logo'
-import { Button } from '@nextui-org/react'
-import { Languages } from 'lucide-react'
 
 export const AuthHeader = () => {
   return (
@@ -10,9 +9,7 @@ export const AuthHeader = () => {
         <Logo />
       </div>
       <div className="flex items-center gap-1">
-        <Button variant="flat" isIconOnly>
-          <Languages className="w-5 h-5" />
-        </Button>
+        <LanguageSwitcher />
         <ThemeSwitcher />
       </div>
     </header>
